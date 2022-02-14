@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 
-app.get("/", function (req, res) {
+app.use(express.json());
+
+app.get("/", function (_, res) {
   res.send("Hello World!");
 });
 
@@ -11,5 +13,5 @@ app.post("/", function (req, res) {
 });
 
 app.listen(8000, function () {
-  console.log("WELCOME POC listening on port 3000!");
+  console.log("WELCOME POC listening on port 8000!");
 });
